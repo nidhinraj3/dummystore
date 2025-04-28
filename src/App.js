@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Route, Routes, Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
+import GoogleAnalytics from './GoogleAnalytics';
 
 const products = [
   { id: 1, name: 'Red T-Shirt', price: 19.99 },
@@ -117,16 +118,7 @@ export default function App() {
 
   return (
     <Router>
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-BRBHQYKKPM"></script>
-      <script>
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-BRBHQYKKPM');
-        `}
-      </script>
-
+      <GoogleAnalytics measurementId="G-BRBHQYKKPM" /> {/* <-- Put your real ID here */}
       <Navbar cart={cart} />
 
       <div className="max-w-6xl mx-auto font-sans">
